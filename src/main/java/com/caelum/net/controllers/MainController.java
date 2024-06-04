@@ -18,16 +18,16 @@ public class MainController {
         return "shop";
     }
 
-    @GetMapping("/news")
-    public String news (Model model) {
-        model.addAttribute("title", "Caelum Networks | Новости");
-        return "news";
-    }
-
     @GetMapping("/about-us")
     public String aboutUs (Model model) {
         model.addAttribute("title", "Caelum Networks | О нас");
         return "about-us";
+    }
+
+    @GetMapping("q&a")
+    public String QuestionAndAnswer (Model model) {
+        model.addAttribute("title", "Caelum Networks | Вопросы и Ответы");
+        return "q&a";
     }
 
     @GetMapping("/founders")
@@ -41,5 +41,4 @@ public class MainController {
         model.addAttribute("title", "Caelum Networks | Наши Партнёры");
         return "partners";
     }
-
 }
