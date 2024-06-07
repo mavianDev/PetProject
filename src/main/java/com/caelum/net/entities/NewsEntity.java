@@ -14,6 +14,16 @@ public class NewsEntity {
     private String shortDesc;
     private String fullText;
 
+    public NewsEntity() {
+
+    }
+
+    public NewsEntity(String title, String shortDesc, String fullText) {
+        this.title = title;
+        this.shortDesc = shortDesc;
+        this.fullText = fullText;
+    }
+
     public Long getId() {
         return id;
     }
