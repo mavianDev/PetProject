@@ -41,10 +41,4 @@ public class MainController {
         model.addAttribute("title", "Caelum Networks | Наши Партнёры");
         return "partners";
     }
-
-    @GetMapping("/admin-panel-of-caelum-network")
-    public String adminPanel (Model model) {
-        model.addAttribute("title", "Caelum | Администрация");
-        return "admin";
-    }
 }
