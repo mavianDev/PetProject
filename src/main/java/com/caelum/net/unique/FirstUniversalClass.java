@@ -2,7 +2,7 @@ package com.caelum.net.unique;
 
 import java.io.IOException;
 
-public class UniversalClass {
+public class FirstUniversalClass {
     public int powTwoSum(int a, int b) throws IOException {
         if (a >= 1000000 || b >= 1000000) {
             System.out.println("Number is too much!");
