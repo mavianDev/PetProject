@@ -2,7 +2,7 @@ package com.caelum.net.unique;
 
 import java.io.*;
 
-public class SecondUniversalClass {
+public class SecondUniversalClass implements Runnable {
     public static void FileExample () {
         BufferedReader bufferedReader = null;
 
@@ -37,5 +37,12 @@ public class SecondUniversalClass {
                 System.out.println("error 404" + e);
             }
         }
+    }
+
+    @Override
+    public void run() {
+       for (int i = 0; i < 10; i++) {
+           System.out.println(i);
+       }
     }
 }

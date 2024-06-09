@@ -3,11 +3,13 @@ package com.caelum.net.controllers;
 import com.caelum.net.entities.NewsEntity;
 import com.caelum.net.repositories.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
 public class AdminController {
     @Autowired
     private NewsRepository newsRepository;
@@ -28,12 +30,14 @@ public class AdminController {
     public String newsCreatePost (@RequestParam String title, @RequestParam String shortDesc, @RequestParam String fullText, Model model) {
         NewsEntity newsEntity = new NewsEntity(title, shortDesc, fullText);
         newsRepository.save(newsEntity);
-        return "redirect:/news";
+        return "redirect:/admin-panel-of-caelum-network/news-settings-on-caelum-networks";
     }
 
     @GetMapping("/admin-panel-of-caelum-network/news-settings-on-caelum-networks")
     public String newsSettings (Model model) {
         model.addAttribute("title", "Caelum Networks | Настройки новостей");
+        Iterable<NewsEntity> news = newsRepository.findAll();
+        model.addAttribute("news", news);
         return "news-settings";
     }
 
