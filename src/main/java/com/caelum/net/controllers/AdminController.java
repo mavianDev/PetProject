@@ -47,4 +47,6 @@ public class AdminController {
         newsRepository.save(newsEntity);
         return "redirect:/admin-panel-of-caelum-network/news-settings-on-caelum-networks";
     }
+
+    
 }

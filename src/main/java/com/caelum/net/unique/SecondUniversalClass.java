@@ -1,6 +1,7 @@
 package com.caelum.net.unique;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class SecondUniversalClass implements Runnable {
     public static void FileExample () {
@@ -45,4 +46,13 @@ public class SecondUniversalClass implements Runnable {
            System.out.println(i);
        }
     }
+
+    public void feed (Boolean status, String ...product) {
+        System.out.printf("Статус: %s, Покушали %s"
+                + status, Arrays.toString(product));
+    }
+
+//    public Exception CheckSite (Boolean SSLConnection) throws IOException {
+//
+//    }
 }
