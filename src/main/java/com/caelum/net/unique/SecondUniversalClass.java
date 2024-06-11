@@ -2,6 +2,8 @@ package com.caelum.net.unique;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SecondUniversalClass implements Runnable {
     public static void FileExample () {
@@ -47,9 +49,42 @@ public class SecondUniversalClass implements Runnable {
        }
     }
 
-    public void feed (Boolean status, String ...product) {
+    public void feed (Boolean status, String... product) {
         System.out.printf("Статус: %s, Покушали %s"
                 + status, Arrays.toString(product));
+    }
+
+    public static String whoLikesIt(String ...names) {
+        if(names.length == 0) {
+            return "no one likes this";
+        }
+
+        else if(names.length == 1) {
+            return names[0] + " likes this";
+        }
+
+        else if(names.length == 2) {
+            return names[0] + " and " + names[1] + " like this";
+        }
+
+        else if(names.length == 3) {
+            return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+        }
+
+        else if (names.length > 3) {
+            return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
+        }
+        return "";
+    }
+
+    public static int findIt (int[] a) {
+        int xor = 0;
+
+        for (int i : a) {
+            xor = xor ^ i;
+        }
+
+        return xor;
     }
 
 //    public Exception CheckSite (Boolean SSLConnection) throws IOException {

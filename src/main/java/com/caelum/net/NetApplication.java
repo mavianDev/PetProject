@@ -10,6 +10,7 @@ public class NetApplication {
 		SecondUniversalClass secondUniversalClass = new SecondUniversalClass();
 		secondUniversalClass.run();
 		SecondUniversalClass.FileExample();
+		SecondUniversalClass.whoLikesIt("Peter");
 		SpringApplication.run(NetApplication.class, args);
 	}
 
