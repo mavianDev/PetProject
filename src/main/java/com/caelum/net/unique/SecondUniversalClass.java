@@ -75,4 +75,8 @@ public class SecondUniversalClass implements Runnable {
 
         return xor;
     }
+
+    public static double upgradedPow (double a, double b) {
+        return Double.parseDouble(Double.toString(Math.pow(a, b)));
+    }
 }
