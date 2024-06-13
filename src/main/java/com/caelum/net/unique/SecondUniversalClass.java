@@ -76,7 +76,30 @@ public class SecondUniversalClass implements Runnable {
         return xor;
     }
 
-    public static double upgradedPow (double a, double b) {
+    public static double upgradedPow (double a, double b) throws IllegalArgumentException {
+        if (a >= 1000000) {
+            try {
+                System.out.println("A can't be >= 1000000");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e);
+            }
+        } else if (a <= -1) {
+            try {
+                System.out.println("A can't be <= 1");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e);
+            }
+        }
+
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                double result = Math.pow(a, b);
+                return result;
+            }
+
+            i = i + i;
+        }
+
         return Double.parseDouble(Double.toString(Math.pow(a, b)));
     }
 }
