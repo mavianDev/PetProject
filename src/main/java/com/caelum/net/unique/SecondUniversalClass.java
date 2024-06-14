@@ -50,8 +50,7 @@ public class SecondUniversalClass implements Runnable {
     }
 
     public void feed (Boolean status, String... product) {
-        System.out.printf("Статус: %s, Покушали %s"
-                + status, Arrays.toString(product));
+        System.out.printf("Статус: %s, Покушали %s", status, Arrays.toString(product));
     }
 
     public static String whoLikesIt(String ...names) {
@@ -102,4 +101,6 @@ public class SecondUniversalClass implements Runnable {
 
         return Double.parseDouble(Double.toString(Math.pow(a, b)));
     }
+
+    
 }
