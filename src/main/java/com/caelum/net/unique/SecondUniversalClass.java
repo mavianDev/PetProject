@@ -2,8 +2,6 @@ package com.caelum.net.unique;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class SecondUniversalClass implements Runnable {
     public static void FileExample () {
@@ -102,5 +100,18 @@ public class SecondUniversalClass implements Runnable {
         return Double.parseDouble(Double.toString(Math.pow(a, b)));
     }
 
-    
+    public int newMethod (Integer test, String username, int amount) {
+        test = amount;
+
+        if (username.isEmpty()) {
+            System.out.println("Nah-nah-nah, username cannot be an empty!");
+        } else if (test == 0) {
+            System.out.println("Unacceptable test :D");
+        } else {
+            System.out.printf("Username is: %s, his amount: %d",
+                    username, amount);
+        }
+
+        return 0;
+    }
 }
