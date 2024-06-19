@@ -2,6 +2,8 @@ package com.caelum.net.unique;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
 
 public class SecondUniversalClass implements Runnable {
     public static void FileExample () {
@@ -112,6 +114,90 @@ public class SecondUniversalClass implements Runnable {
                     username, amount);
         }
 
+        for (int i = 0; i < amount; i++) {
+            i = i + i;
+            System.out.println(i);
+        }
+
+        Collection<Integer> user = new Collection<Integer>() {
+            @Override
+            public int size() {
+                System.out.println(username);
+                return 0;
+            }
+
+            @Override
+            public boolean isEmpty() {
+                return false;
+            }
+
+            @Override
+            public boolean contains(Object o) {
+                return false;
+            }
+
+            @Override
+            public Iterator<Integer> iterator() {
+                return null;
+            }
+
+            @Override
+            public Object[] toArray() {
+                return new Object[0];
+            }
+
+            @Override
+            public <T> T[] toArray(T[] a) {
+                return null;
+            }
+
+            @Override
+            public boolean add(Integer integer) {
+                return false;
+            }
+
+            @Override
+            public boolean remove(Object o) {
+                return false;
+            }
+
+            @Override
+            public boolean containsAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean addAll(Collection<? extends Integer> c) {
+                return false;
+            }
+
+            @Override
+            public boolean removeAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean retainAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public void clear() {
+
+            }
+        };
+
         return 0;
+    }
+
+    public static int[] sortArray(int[] array) {
+        int begin = 0;
+        int finish = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            i = array[begin] + array[finish];
+        }
+
+        return array;
     }
 }

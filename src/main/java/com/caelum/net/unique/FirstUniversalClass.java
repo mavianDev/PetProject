@@ -27,6 +27,19 @@ public class FirstUniversalClass {
         return number;
     }
 
+    public static void inputStars(int stars) {
+        String result = "";
+        String star = "*";
+
+        if (stars >= 1) {
+            System.out.println(star.repeat(stars));
+            result = star;
+        }
+
+        System.out.println(result);
+    }
+
+
     public static String getHiddenCard(String card, int cardLength) {
         if (card.length() > 16) {
             System.out.println("Card length is more than usual.");
