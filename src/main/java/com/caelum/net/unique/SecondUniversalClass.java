@@ -1,6 +1,7 @@
 package com.caelum.net.unique;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
@@ -212,4 +213,29 @@ public class SecondUniversalClass implements Runnable {
             return String.valueOf(number);
         }
     }
+
+    public int Smallest (int[] arr) {
+        int smallest = arr[0];
+        int smalles_index = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                smallest = arr[i];
+                smalles_index = i;
+            }
+        }
+
+        return smalles_index;
+    }
+
+    public ArrayList<Integer> selectionSort (int[] arr) {
+        ArrayList<Integer> newArr = new ArrayList<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            int smallest = Smallest(arr);
+            newArr.add(newArr.remove(smallest));
+        }
+        return newArr;
+    }
+
 }
