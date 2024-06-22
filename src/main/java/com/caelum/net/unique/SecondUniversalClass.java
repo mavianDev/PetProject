@@ -238,4 +238,49 @@ public class SecondUniversalClass implements Runnable {
         return newArr;
     }
 
+    public int majorityElement(int[] nums) {
+        int a = nums[0];
+        int count = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == a) {
+                count++;
+            } else {
+                count--;
+            }
+
+            if (count == 0) {
+                a = nums[i];
+                count = 1;
+            }
+        }
+
+        return a;
+    }
+
+    public int[] twoSum (int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return new int[] {};
+    }
+
+    public int newMethod (String username, int ageOfBirth) {
+
+        return 0;
+    }
+
+    // recursion
+    public int factorial (int x) {
+        if (x == 1) {
+            return 1;
+        } else {
+            return x * factorial(x - 1);
+        }
+    }
+
 }
