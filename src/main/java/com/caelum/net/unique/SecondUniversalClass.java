@@ -270,12 +270,28 @@ public class SecondUniversalClass implements Runnable {
     }
 
     public int newMethod (String username, int ageOfBirth) {
-
+        if (username.equals("")) {
+            System.out.println("Error: username can not be an empty!");
+        } else if (ageOfBirth <= 18) {
+            System.out.println(username + " age is less than 18, his actual age: " + ageOfBirth);
+        } else if (ageOfBirth >= 100) {
+            System.out.println(username + " age is more or equals 100, his actual age: " + ageOfBirth);
+        } else if (ageOfBirth <= 1) {
+            System.out.println(username + " age is less than 1, his actual age: " + ageOfBirth);
+        } else {
+            System.out.println(username + " age is: " + ageOfBirth);
+        }
         return 0;
     }
 
     // recursion
     public int factorial (int x) {
+
+        for (int i = 0; i < x; i++) {
+            i = x + i;
+            System.out.println(i);
+        }
+
         if (x == 1) {
             return 1;
         } else {
