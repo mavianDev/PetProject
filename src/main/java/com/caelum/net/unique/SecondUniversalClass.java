@@ -299,4 +299,37 @@ public class SecondUniversalClass implements Runnable {
         }
     }
 
+    public int uniqueMethod (String name, String surname, int age) {
+
+        name.toLowerCase();
+
+        switch (name) {
+            case "":
+                System.out.println("Empty string is not allowed here!");
+            case "Ilshat":
+                System.out.println("You are " + name + " the best programmer!" );
+            case "Ilyar":
+                System.out.println("You are " + name + " brawl stars!");
+            default:
+                System.out.println("You are nothing!");
+        }
+
+        surname.toLowerCase();
+
+        switch (surname) {
+            case "":
+                System.out.println("Empty string is not allowed here!");
+            case "Iskanderov":
+                System.out.println("You are the GOAT! " + surname);
+        }
+
+        if (age < 18) {
+            System.out.println("You can't be here!");
+        } else {
+            System.out.println("You're welcome!");
+        }
+
+        return 0;
+    }
+
 }
