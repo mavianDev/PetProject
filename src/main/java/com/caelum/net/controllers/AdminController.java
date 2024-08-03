@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class AdminController {
     @Autowired
@@ -27,8 +29,14 @@ public class AdminController {
     }
 
     @PostMapping("/admin-panel-of-caelum-network/create-new-news-on-caelum-networks")
-    public String newsCreatePost (@RequestParam String title, @RequestParam String shortDesc, @RequestParam String fullText, Model model) {
-        NewsEntity newsEntity = new NewsEntity(title, shortDesc, fullText);
+    public String newsCreatePost(@RequestParam String title,
+                                 @RequestParam String shortDesc,
+                                 @RequestParam String content,
+                                 @RequestParam String imgUrl,
+                                 @RequestParam String author,
+                                 @RequestParam LocalDateTime createdAt,
+    Model model) {
+        NewsEntity newsEntity = new NewsEntity(title, shortDesc, content, imgUrl, author, createdAt);
         newsRepository.save(newsEntity);
         return "redirect:/admin-panel-of-caelum-network/news-settings-on-caelum-networks";
     }
@@ -42,8 +50,14 @@ public class AdminController {
     }
 
     @PostMapping("/admin-panel-of-caelum-network/news-settings-on-caelum-networks")
-    public String showNewsInSettings (@RequestParam String title, @RequestParam String shortDesc, @RequestParam String fullText, Model model) {
-        NewsEntity newsEntity = new NewsEntity(title, shortDesc, fullText);
+    public String showNewsInSettings (@RequestParam String title,
+                                      @RequestParam String shortDesc,
+                                      @RequestParam String content,
+                                      @RequestParam String imgUrl,
+                                      @RequestParam String author,
+                                      @RequestParam LocalDateTime createdAt,
+                                      Model model) {
+        NewsEntity newsEntity = new NewsEntity(title, shortDesc, content, imgUrl, author, createdAt);
         newsRepository.save(newsEntity);
         return "redirect:/admin-panel-of-caelum-network/news-settings-on-caelum-networks";
     }
