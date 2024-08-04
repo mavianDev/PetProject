@@ -20,7 +20,7 @@
 <body>
 <div class="container mt-5">
     <h1>Создать новость</h1>
-    <form th:action="@{/news/create}" th:object="${article}" method="post">
+    <form th:action="@{/admin-panel-of-caelum-network/create-new-news-on-caelum-networks}" th:object="${article}" method="post">
         <div class="mb-3">
             <label for="title" class="form-label">Заголовок</label>
             <input type="text" class="form-control" id="title" th:field="*{title}" required>
@@ -44,7 +44,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Создать</button>
     </form>
-    <a href="/news" class="btn btn-secondary mt-3">Назад к списку</a>
+    <a href="/admin-panel-of-caelum-network/news-settings-on-caelum-networks" class="btn btn-secondary mt-3">Назад к списку</a>
 </div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
 </body>

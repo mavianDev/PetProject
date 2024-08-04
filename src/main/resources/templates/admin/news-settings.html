@@ -20,7 +20,7 @@
                     <a class="nav-link active" aria-current="page" href="/admin-panel-of-caelum-network">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/news/create" class="btn btn-primary">Создать новость</a>
+                    <a href="/admin-panel-of-caelum-network/create-new-news-on-caelum-networks" class="btn btn-primary">Создать новость</a>
                 </li>
             </ul>
         </div>
@@ -29,14 +29,22 @@
 
 <div class="container text-center">
     <h1>Все Новости</h1>
-    <div th:each="el : ${article} ">
-        <h5 class="card-title" th:text="${el.title}" />
-        <br>
-        <h6 class="card-subtitle mb-2 text-muted" th:text="${el.shortDesc}" />
-        <br>
-        <h6 class="card-subtitle mb-2 text-muted" th:text="${el.content}" />
-        <br>
-        <a th:href="@{/news/delete/{id}(id=${el.id})}" class="btn btn-danger">Удалить</a>
+    <div class="list-group">
+        <div th:if="${#lists.isEmpty(articles)}">
+            <p>Новостей нет</p>
+        </div>
+        <div th:each="article : ${articles}" class="list-group-item list-group-item-action mt-3">
+            <span>Заголовок: <h5 th:text="${article.title}"></h5></span>
+            <p th:text="${article.shortDesc}">Краткое описание</p>
+            <img th:src="${article.imgUrl}" class="img-fluid" alt="imgOfArticle">
+            <p th:text="${article.author}">Автор</p>
+            <p th:text="${#temporals.format(article.createdAt, 'dd-MM-yyyy HH:mm')}">Дата создания</p>
+            <a th:href="@{/news/{id}(id=${article.id})}" class="btn btn-info">Подробнее</a>
+            <form th:action="@{/news/delete/{id}(id=${article.id})}" method="post" style="display:inline;">
+                <input type="hidden" name="_method" value="delete"/>
+                <button type="submit" class="btn btn-danger">Удалить</button>
+            </form>
+        </div>
     </div>
 </div>
 
