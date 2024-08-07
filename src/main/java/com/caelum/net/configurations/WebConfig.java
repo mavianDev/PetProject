@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers (ViewControllerRegistry registry) {
-        registry.addViewController("/error/404").setViewName("errors/404");
+        registry.addViewController("/error/404").
+                setViewName("errors/404");
     }
 }

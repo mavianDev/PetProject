@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ErrorsController implements ErrorController {
     @RequestMapping("/error")
-    public String handleError(HttpServletRequest request) {
+    public String handleError (HttpServletRequest request) {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
 
         return switch (statusCode) {
@@ -18,7 +18,7 @@ public class ErrorsController implements ErrorController {
         };
     }
 
-    public String getErrorPath() {
+    public String getErrorPath () {
         return "/error";
     }
 }

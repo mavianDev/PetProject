@@ -8,9 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-
-
 @Controller
 @RequestMapping("/news")
 public class NewsController {
@@ -23,6 +20,7 @@ public class NewsController {
 
     @GetMapping
     public String getAllArticles(Model model) {
+        model.addAttribute("title", "Caelum Networks | Новости");
         model.addAttribute("articles", service.getAllArticles());
         return "news/list";
     }

@@ -40,7 +40,7 @@
             <p th:text="${article.author}">Автор</p>
             <p th:text="${#temporals.format(article.createdAt, 'dd-MM-yyyy HH:mm')}">Дата создания</p>
             <a th:href="@{/news/{id}(id=${article.id})}" class="btn btn-info">Подробнее</a>
-            <form th:action="@{/news/delete/{id}(id=${article.id})}" method="post" style="display:inline;">
+            <form th:action="@{/admin-panel-of-caelum-networks/delete/{id}(id=${article.id})}" method="post" style="display:inline;">
                 <input type="hidden" name="_method" value="delete"/>
                 <button type="submit" class="btn btn-danger">Удалить</button>
             </form>
