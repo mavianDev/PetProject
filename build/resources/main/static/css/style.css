@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    background: none;
+    background-image: url("images/bg/background-1.jpg");
+}
+
+.newsCard {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    border-radius: 5px;
+    background: gray;
+    margin-top: 10px;
+}
