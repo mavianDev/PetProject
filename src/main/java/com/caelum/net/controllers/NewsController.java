@@ -8,13 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-
-
 @Controller
 @RequestMapping("/news")
 public class NewsController {
-    private NewsService service;
+    private final NewsService service;
 
     @Autowired
     public NewsController(NewsService service) {
@@ -23,6 +20,7 @@ public class NewsController {
 
     @GetMapping
     public String getAllArticles(Model model) {
+        model.addAttribute("title", "Caelum Networks | Новости");
         model.addAttribute("articles", service.getAllArticles());
         return "news/list";
     }
@@ -32,24 +30,5 @@ public class NewsController {
         NewsEntity newsEntity = service.getArticleById(id);
         model.addAttribute("article", service.getArticleById(id));
         return "news/detail";
-    }
-
-    @GetMapping("/create")
-    public String showCreateForm(Model model) {
-        model.addAttribute("article", new NewsEntity());
-        return "news/create";
-    }
-
-    @PostMapping("/create")
-    public String createArticle(@ModelAttribute NewsEntity article) {
-        article.setCreatedAt(LocalDateTime.now());
-        service.saveArticle(article);
-        return "redirect:/news";
-    }
-
-    @PostMapping("/delete/{id}")
-    public String deleteArticle(@PathVariable Long id) {
-        service.deleteArticle(id);
-        return "redirect:/news";
     }
 }
